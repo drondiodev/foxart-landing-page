@@ -1,21 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sora: "Sora", sans-serif;
+  color-scheme: dark; /* Using the default dark mode. */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  scroll-behavior: smooth; /* Scrolling towards a target element is smooth and progressive. */
+}
+
+@layer base {
+  body {
+    @apply text-base bg-n-9 text-n-1;
+    font-family: var(--font-sora);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .font-sora {
+    font-family: var(--font-sora);
+  }
+}
+
+a.button:hover {
+  @apply no-underline;
+}
+
+a:hover {
+  @apply underline text-p-3 animate;
 }

@@ -32,7 +32,7 @@ export const Button = ({
   const renderLink = () => {
     return (
       <Link
-        href={href}
+        href={href || "/"} // Ajout d'une valeur par défaut pour href
         className={`inline-block px-3 py-3 no-underline rounded-lg button lg:py-4 lg:px-6 ${themeClasses} ${baseClasse} ${className}`}
       >
         {children}
